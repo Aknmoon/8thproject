@@ -23,6 +23,14 @@ li{
 .wrapper{
   /* max-width: 960px; */
   margin: 0 auto 130px auto;
+  /* ここが
+  
+  
+  原因1
+  
+  
+  
+  */
   font-size: 0.9rem;
   /*  */
   /* padding: 0 4%; */
@@ -111,6 +119,7 @@ li{
   padding: 0;
   width: 100%;
   height: 180px;
+  margin-bottom: 0;
 }
 #icon li{
   display: flex;
@@ -144,35 +153,63 @@ li{
   
 }
 
-#gallery ul{
-  display: flex;
-  list-style-type: none;
-  padding: 0;
+.gallery{
+  /* height: auto; */
   width: 100%;
-  height: 580px;
-}
-
-#gallery ul{
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* list-style: none;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0; */
-  /* margin-bottom: 50px; */
-
-}
-#gallery li{
-  /* width: 25%; */
+  display:flex;
+  flex-wrap:wrap;/* これを指定する */
+  justify-content:space-between;
   
-
-  /* display: inline-block;
-  width: 24.5%;
-  height: 250px; */
-  /* object-fit: cover; */
-  /* width: 100%;
-  margin-bottom: 23px; */
+  /* position: relative; */
 }
-/* #gallery img{
-  width: calc(100% / 4);
-} */
+.gallery-items{
+  /* height:auto; */
+  width:calc(100%/4);/* 横幅を3等分 */
+  display:flex;/* 高さを揃えるための指定 */
+  flex-direction:column;/* 高さを揃えるための指定 */
+  border:1px solid #ccc;装飾用
+  box-sizing:border-box;/* 装飾用 */
+  position: relative;
+}
+.gallery-items .image{
+  width:100%;
+  
+  /* height:auto; */
+  background:gray;/* 装飾用 */
+}
+.gallery-items img{
+  width:100%;
+  height:700px;
+  object-fit: cover;
+  
+}
+.gallery-items h3{
+  flex-grow:1;/* 高さを揃えるため指定 */
+  background:#E8D9DB;/* 装飾用 */
+  position: absolute;
+  /* width: 75%; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+#about{
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 60px; */
+  margin: 120px;
+}
+#about .text{
+  width: 50%;
+  padding: 0 7%;
+}
+#about .image{
+  width: 50%;
+}
+#about img{
+  height: 660px;
+  margin-left: 100px;
+}
+
+
